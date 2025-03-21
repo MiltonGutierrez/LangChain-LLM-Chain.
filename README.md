@@ -1,6 +1,11 @@
+
+### Escuela Colombiana de Ingeniería
+
+### Arquitectura Empresarial - AREP
+
 # Build a Simple LLM Application with Chat Models and Prompt Templates
 
-In this quickstart, we'll show you how to build a simple LLM application with LangChain. This application will translate text from English into another language. This is a relatively simple LLM application - it's just a single LLM call plus some prompting. Still, this is a great way to get started with LangChain - a lot of features can be built with just some prompting and an LLM call!
+This tutorial introduces building a simple LLM application with LangChain to translate text from English into another language. The application relies on a single LLM call combined with prompt templating. Although it's a basic example, it demonstrates how many features can be built with just prompting and an LLM call, making it a great starting point for working with LangChain.
 
 ## After reading this tutorial, you'll have a high-level overview of:
 
@@ -8,13 +13,30 @@ In this quickstart, we'll show you how to build a simple LLM application with La
 - Using prompt templates
 - Debugging and tracing your application using LangSmith
 
-Let's dive in!
 
 ## Setup
+### Prerequisites 
+- Python installed (version > 3).
+- Access to a terminal.
+- Basic python programming knowledge. 
 
 ### Jupyter Notebook
 
-This and other tutorials are perhaps most conveniently run in a Jupyter notebook. Going through guides in an interactive environment is a great way to better understand them. See [here](#) for instructions on how to install.
+#### Installation
+
+```bash
+pip install jupyterlab
+pip install notebook
+```
+
+#### Create a notebook.
+```bash
+jupyter notebook
+```
+or
+```bash
+python -m notebook
+```
 
 ### Installation
 
@@ -72,15 +94,8 @@ model.invoke(messages)
 ```
 
 Output:
-```python
-AIMessage(content='Ciao!', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 3, 'prompt_tokens': 20, 'total_tokens': 23}})
-```
+![image](https://github.com/user-attachments/assets/83642d1f-e00d-498a-bd1c-bb76e1ba1cf9)
 
-:::tip
-If we've enabled LangSmith, we can see that this run is logged to LangSmith, and we can see the LangSmith trace. The LangSmith trace reports token usage information, latency, standard model parameters (such as temperature), and other information.
-:::
-
-Note that ChatModels receive message objects as input and generate message objects as output. In addition to text content, message objects convey conversational roles and hold important data, such as tool calls and token usage counts.
 
 LangChain also supports chat model inputs via strings or OpenAI format. The following are equivalent:
 
@@ -105,8 +120,6 @@ Output:
 ```plaintext
 |C|iao|!||
 ```
-
-You can find more details on streaming chat model outputs in [this guide](#).
 
 ## Prompt Templates
 
@@ -162,9 +175,9 @@ print(response.content)
 ```
 
 Output:
-```plaintext
-Ciao!
+![image](https://github.com/user-attachments/assets/b3f8a9af-02f4-425e-ad47-9d3e375e117a)
+
 ```
 
-
-
+## References:
+[LangChain](https://python.langchain.com/docs/tutorials/llm_chain/)
